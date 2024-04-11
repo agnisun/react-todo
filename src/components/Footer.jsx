@@ -1,13 +1,18 @@
-import { TasksFilter } from './TasksFilter';
-import { TaskType } from '../types';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+
+import { TaskType } from "../types";
+
+import { TasksFilter } from "./TasksFilter";
 
 export function Footer({ tasks, setTasks }) {
-  const handleOnClick = () => setTasks((tasks) => tasks.filter((task) => !task.completed));
+  const handleOnClick = () =>
+    setTasks((tasks) => tasks.filter((task) => !task.completed));
 
   return (
     <footer className="footer">
-      <span className="todo-count">{tasks.filter((task) => !task.completed).length} items left</span>
+      <span className="todo-count">
+        {tasks.filter((task) => !task.completed).length} items left
+      </span>
       <TasksFilter setTasks={setTasks} />
       <button onClick={handleOnClick} className="clear-completed">
         Clear completed

@@ -1,11 +1,11 @@
-import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
+import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 
 export function NewTaskForm({ setTaskValue, taskValue, setTasks }) {
   const handleOnChange = (e) => setTaskValue(e.target.value);
 
   const handleOnKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       setTasks((tasks) =>
         tasks.concat([
           {
@@ -13,10 +13,14 @@ export function NewTaskForm({ setTaskValue, taskValue, setTasks }) {
             completed: false,
             created: new Date(),
             id: nanoid(),
+            timer: 0,
+            running: false,
+            editing: false,
+            isHide: false,
           },
-        ])
+        ]),
       );
-      setTaskValue('');
+      setTaskValue("");
     }
   };
 

@@ -1,6 +1,8 @@
-import { Task } from './Task';
-import PropTypes from 'prop-types';
-import { TaskType } from '../types';
+import PropTypes from "prop-types";
+
+import { TaskType } from "../types";
+
+import { Task } from "./Task";
 
 export function TaskList({ tasks, setTasks }) {
   return (

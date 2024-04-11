@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 export function TasksFilter({ setTasks }) {
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState("");
 
   const showAll = () => {
     setTasks((tasks) =>
@@ -10,9 +10,9 @@ export function TasksFilter({ setTasks }) {
         task.isHide = false;
 
         return task;
-      })
+      }),
     );
-    setSelected('all');
+    setSelected("all");
   };
 
   const showCompleted = () => {
@@ -22,9 +22,9 @@ export function TasksFilter({ setTasks }) {
         else task.isHide = false;
 
         return task;
-      })
+      }),
     );
-    setSelected('completed');
+    setSelected("completed");
   };
 
   const showActive = () => {
@@ -34,25 +34,34 @@ export function TasksFilter({ setTasks }) {
         else task.isHide = false;
 
         return task;
-      })
+      }),
     );
-    setSelected('active');
+    setSelected("active");
   };
 
   return (
     <ul className="filters">
       <li>
-        <button onClick={showAll} className={selected === 'all' ? 'selected' : ''}>
+        <button
+          onClick={showAll}
+          className={selected === "all" ? "selected" : ""}
+        >
           All
         </button>
       </li>
       <li>
-        <button onClick={showActive} className={selected === 'active' ? 'selected' : ''}>
+        <button
+          onClick={showActive}
+          className={selected === "active" ? "selected" : ""}
+        >
           Active
         </button>
       </li>
       <li>
-        <button onClick={showCompleted} className={selected === 'completed' ? 'selected' : ''}>
+        <button
+          onClick={showCompleted}
+          className={selected === "completed" ? "selected" : ""}
+        >
           Completed
         </button>
       </li>
